@@ -19,3 +19,12 @@ export const createMenu = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getMenus = async (req, res, next) => {
+  try {
+    const menus = await Menu.find()
+    res.status(200).json(menus)
+  } catch (error) {
+    next(error)
+  }
+}
