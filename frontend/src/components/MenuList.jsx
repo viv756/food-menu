@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import MenuItemList from "./MenuItemList";
 
 const MenuList = () => {
   const [menus, setMenus] = useState([]);
@@ -21,6 +22,10 @@ const MenuList = () => {
     fetchMenu();
   }, []);
 
+  const handleClick = async (id) => {
+    
+  }
+
   const settings = {
     dots: true,
     infinite: true,
@@ -30,7 +35,8 @@ const MenuList = () => {
     centerMode:true
   };
   return (
-    <div className="bg-[url('./assets/Rectangle107.png')] w-full h-24 bg-cover bg-center">
+    <div>
+      <div className="bg-[url('./assets/Rectangle107.png')] w-full h-24 bg-cover bg-center">
       <div className="max-w-xl mx-auto">
         <div className="">
           {menus.length > 0 ? (
@@ -38,6 +44,7 @@ const MenuList = () => {
               {menus.map((menu, index) => (
                 <div className="">
                   <button
+                    onClick={handleClick}
                     key={index}
                     className="bg-black p-4 sm:min-w-32 text-white mt-3 rounded-md">
                     {menu.menuName}
@@ -50,6 +57,8 @@ const MenuList = () => {
           )}
         </div>
       </div>
+      </div>
+      <MenuItemList/>
     </div>
   );
 };
