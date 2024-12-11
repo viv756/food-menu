@@ -14,9 +14,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/menus" element={<MenuPage />} />
-          <Route path="create-menu" element={<CreateMenuPage />} />
-          <Route path="add-menu-item/:menuId" element={ <AddMenuItemPage/>} />
-          <Route path="update-menu-item/:menuItemId" element={<EditMenuItemPage />} />
+          <Route path="/create-menu" element={<CreateMenuPage />} />
+          <Route path="/add-menu-item/:menuId" element={ <AddMenuItemPage/>} />
+          <Route path="/update-menu-item/:menuItemId" element={<EditMenuItemPage />} />
         </Routes>
       </BrowserRouter>
     </div>
