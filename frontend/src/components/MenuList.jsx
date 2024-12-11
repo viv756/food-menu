@@ -46,7 +46,7 @@ const MenuList = () => {
                   <button
                     onClick={handleClick}
                     key={index}
-                    className="bg-black p-4 sm:min-w-32 text-white mt-3 rounded-md">
+                    className="bg-black p-4 sm:min-w-32 text-white mt-3 rounded-md uppercase">
                     {menu.menuName}
                   </button>
                 </div>

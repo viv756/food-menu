@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import menuRouter from "./routes/menu.route.js";
+import menuItemRouter from "./routes/menuItem.route.js";
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ mongoose
   });
 
 app.use("/api/menu", menuRouter);
+app.use("/api/menu-item",menuItemRouter)
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");

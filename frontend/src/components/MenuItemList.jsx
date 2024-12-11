@@ -9,7 +9,7 @@ const MenuItemList = () => {
       <div className="flex-col mx-auto w-1/2 ">
         <h1 className="text-white text-3xl text-center mt-36">DESCRIPTION</h1>
         <div className="mt-10">
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 gap-6">
             <div>
               <h2 className="text-white text-xl">MENUITEM NAME</h2>
               <p className="text-[#FFFFFFBF]">
