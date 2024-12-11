@@ -5,7 +5,7 @@ const CreateMenuPage = () => {
     menuName: "",
     description: "",
   });
-  const [error,setError] = useState()
+  const [error, setError] = useState();
 
   const handleChange = (e) => {
     setFormData({
@@ -17,7 +17,7 @@ const CreateMenuPage = () => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const res =await fetch("/api/menu/create", {
+      const res = await fetch("/api/menu/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,7 +27,7 @@ const CreateMenuPage = () => {
 
       const data = await res.json();
       if (data.success === false) {
-        setError(data.message)
+        setError(data.message);
       }
     } catch (error) {
       console.log(error);
