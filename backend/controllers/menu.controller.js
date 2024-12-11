@@ -14,7 +14,7 @@ export const createMenu = async (req, res, next) => {
     });
 
     await newMenu.save();
-    res.json({ message: "Menu created successfully" });
+    res.status(200).json("Menu created successfully");
   } catch (error) {
     next(error);
   }
