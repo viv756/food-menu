@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const EditMenuItemPage = () => {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
   const { menuItemId } = useParams();
-
-  console.log(formData);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchMenuItem = async () => {
@@ -42,6 +41,7 @@ const EditMenuItemPage = () => {
       if (data.success === false) {
         setError(data.message);
       }
+      navigate('/menus')
     } catch (error) {
       console.log(error);
       

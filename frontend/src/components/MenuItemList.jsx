@@ -9,7 +9,7 @@ const MenuItemList = ({ menu }) => {
       </div>
       <div className="w-full">
         <div className="flex-col mx-auto w-[1140px] h-full border-2 border-white p-4  ">
-          <h1 className="text-white text-5xl text-center font-bold mt-24">{menu?.description}</h1>
+          <h1 className="text-white text-5xl sm:text-center font-bold mt-24">{menu?.description}</h1>
 
           <button className="p-3 bg-blue-700 rounded-md text-white mt-16">
             <Link to={`/add-menu-item/${menu?._id}`}>ADD MENU ITEM</Link>
