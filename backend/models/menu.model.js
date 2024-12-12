@@ -13,7 +13,7 @@ const menuSchema = new mongoose.Schema(
     menuitems: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Menuitem",
+        ref: "MenuItem",
       },
     ],
   },
