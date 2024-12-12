@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
 const AddMenuItemPage = () => {
+  const { menuId } = useParams();
   const [formData, setFormData] = useState({
     itemName: "",
     description: "",
     price: 0,
   });
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -14,10 +17,29 @@ const AddMenuItemPage = () => {
     });
   };
 
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const res = await fetch(`/api/menu-item/create/${menuId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success === false) {
+        setError(data.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="p-3 max-w-lg mx-auto mt-32 ">
       <h1 className="text-center text-3xl font-semibold my-7">Add food Item</h1>
-      <form className="flex flex-col gap-4">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           type="text"
           placeholder="Name"
@@ -50,6 +72,7 @@ const AddMenuItemPage = () => {
           Create
         </button>
       </form>
+      {error && <p className="text-red-500 mt-5">{error}</p>}
     </div>
   );
 };

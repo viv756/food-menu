@@ -5,7 +5,7 @@ const CreateMenuPage = () => {
     menuName: "",
     description: "",
   });
-  const [error, setError] = useState();
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setFormData({

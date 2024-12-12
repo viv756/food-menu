@@ -28,3 +28,12 @@ export const getMenus = async (req, res, next) => {
     next(error)
   }
 }
+
+export const getMenu = async (req, res, next) => {
+  try {
+    const menu = await Menu.findById(req.params.id)
+    res.status(200).json(menu)
+  } catch (error) {
+    next(error)
+  }
+}
