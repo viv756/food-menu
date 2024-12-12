@@ -1,6 +1,13 @@
-import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { IoMdMenu, IoMdClose } from "react-icons/io";
+import ResponsiveMenu from "./Responsivemenu";
 
 const Header = () => {
+
+  const [showMenu, setShowMenu] = useState(false)
+  const toggleMenu = () => setShowMenu(!showMenu);
+
   return (
     <header className="bg-black shadow-md">
       <div className="flex justify-between items-center max-w-7xl h-20 mx-auto p-3">
@@ -10,6 +17,7 @@ const Header = () => {
             <span className="text-slate-700">SOFT</span>
           </h1>
         </NavLink>
+        <div className="flex">
         <ul className="flex gap-4">
           <NavLink
             to="/"
@@ -33,7 +41,17 @@ const Header = () => {
             <li>Create Menu</li>
           </NavLink>
         </ul>
+
+      <div className="pt-4 sm:hidden">
+            {showMenu ? (
+              <IoMdClose onClick={toggleMenu} className="cursor-pointer text-white" size={30} />
+            ) : (
+              <IoMdMenu onClick={toggleMenu} className="cursor-pointer text-white" size={30} />
+            )}
       </div>
+       </div>
+      </div>
+      <ResponsiveMenu showMenu={showMenu} />
     </header>
   );
 };
