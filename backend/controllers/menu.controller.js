@@ -22,24 +22,26 @@ export const createMenu = async (req, res, next) => {
 
 export const getMenus = async (req, res, next) => {
   try {
-    const menus = await Menu.find().populate({
-      path: "menuitems",
-      options:{sort:{updatedAt:-1}},
-    })
-    res.status(200).json(menus)
+    const menus = await Menu.find()
+      .sort({ updatedAt: -1 })
+      .populate({
+        path: "menuitems",
+        options: { sort: { updatedAt: -1 } },
+      });
+    res.status(200).json(menus);
   } catch (error) {
-    next(error)
+    next(error);
   }
-}
+};
 
 export const getMenu = async (req, res, next) => {
   try {
     const menu = await Menu.findById(req.params.id).populate({
       path: "menuitems",
-      options:{sort:{updatedAt:-1}},
-    })
-    res.status(200).json(menu)
+      options: { sort: { updatedAt: -1 } },
+    });
+    res.status(200).json(menu);
   } catch (error) {
-    next(error)
+    next(error);
   }
-}
+};

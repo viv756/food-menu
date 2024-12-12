@@ -49,8 +49,8 @@ const EditMenuItemPage = () => {
   };
 
   return (
-    <div className="p-3 max-w-lg mx-auto mt-32 ">
-      <h1 className="text-center text-3xl font-semibold my-7">Edit food Item</h1>
+    <div className="p-3 max-w-lg mx-auto mt-32 border-2 border-white rounded-md ">
+      <h1 className="text-center text-3xl font-semibold my-7 text-white">Edit food Item</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           type="text"
@@ -80,7 +80,7 @@ const EditMenuItemPage = () => {
         />
         <button
           type="submit"
-          className="p-3 bg-black text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80">
+          className="p-3 bg-blue-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80">
           Update
         </button>
       </form>

@@ -5,7 +5,7 @@ const Header = () => {
     <header className="bg-black shadow-md">
       <div className="flex justify-between items-center max-w-7xl h-20 mx-auto p-3">
         <NavLink to="/">
-          <h1 className="font-bold text-md sm:text-xl flex flex-wrap gap-2">
+          <h1 className="font-bold text-xl sm:text-4xl flex flex-wrap gap-2">
             <span className="text-slate-500">DEEPNET</span>
             <span className="text-slate-700">SOFT</span>
           </h1>

@@ -7,6 +7,7 @@ import MenuItemList from "./MenuItemList";
 const MenuList = () => {
   const [menus, setMenus] = useState([]);
   const [menu, setMenu] = useState(null);
+console.log(menus);
 
   useEffect(() => {
     const fetchMenu = async () => {

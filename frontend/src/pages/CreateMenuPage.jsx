@@ -38,8 +38,8 @@ const CreateMenuPage = () => {
   };
 
   return (
-    <div className="p-3 max-w-lg mx-auto mt-32 ">
-      <h1 className="text-center text-3xl font-semibold my-7">Create Food Menu</h1>
+    <div className="p-3 max-w-lg mx-auto mt-32 bg-black border-2 border-white roumded-md h-96">
+      <h1 className="text-center text-3xl font-semibold my-7 text-white">Create Food Menu</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           type="text"
@@ -61,7 +61,7 @@ const CreateMenuPage = () => {
         />
         <button
           type="submit"
-          className="p-3 bg-black text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80">
+          className="p-3 bg-blue-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80">
           Create
         </button>
       </form>

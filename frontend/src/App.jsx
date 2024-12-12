@@ -8,7 +8,7 @@ import AddMenuItemPage from "./pages/AddMenuItemPage";
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-black h-screen overflow-x-hidden">
       <BrowserRouter>
         <Header/>
         <Routes>
