@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CreateMenuPage = () => {
   const [formData, setFormData] = useState({
@@ -6,6 +7,7 @@ const CreateMenuPage = () => {
     description: "",
   });
   const [error, setError] = useState(null);
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     setFormData({
@@ -29,6 +31,7 @@ const CreateMenuPage = () => {
       if (data.success === false) {
         setError(data.message);
       }
+      navigate('/menus')
     } catch (error) {
       console.log(error);
     }

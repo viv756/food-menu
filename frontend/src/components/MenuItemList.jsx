@@ -17,10 +17,12 @@ const MenuItemList = ({ menu }) => {
           <div className="grid grid-cols-2 gap-6">
             {menu?.menuitems?.map((menuItem) => (
               <div key={menuItem._id}>
-                <h2 className="text-white text-2xl">{menuItem.itemName}</h2>
+                <h2 className="text-white text-2xl">{menuItem.itemName}.................{menuItem.price }</h2>
                 <p className="text-[#FFFFFFBF] mt-3">{menuItem.description}</p>
                 <button className="text-white bg-blue-700 w-16 h-8 rounded-md mt-2 font-bold">
-                  EDIT
+                  <Link to={`/update-menu-item/${menuItem._id}`}>
+                    EDIT
+                 </Link>
                 </button>
               </div>
             ))}

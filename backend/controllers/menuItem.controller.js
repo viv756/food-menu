@@ -28,3 +28,40 @@ export const createMenuItem = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getMenuItem = async (req, res, next) => {
+  try {
+    const menuItem = await MenuItem.findById(req.params.id);
+    res.status(200).json(menuItem);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const updateMenuItem = async (req, res, next) => {
+  const { itemName, description, price } = req.body;
+  
+  if (!itemName || !description || !price) {
+    return next(errorHandler(400, "Please provide all required fields"));
+  }
+  const menuItem = await MenuItem.findById(req.params.id);
+  if (!menuItem) {
+    return next(errorHandler(404, "menuItem not found"));
+  }
+  try {
+    const updateMenuItem = await MenuItem.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: {
+          itemName,
+          description,
+          price,
+        },
+      },
+      { new: true }
+    );
+    res.status(200).json(updateMenuItem);
+  } catch (error) {
+    next(error);
+  }
+};
